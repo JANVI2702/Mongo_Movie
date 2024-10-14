@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    font-family: "Afacad Flux", sans-serif;
+}
+
+.glass-navbar {
+    background: rgba(0, 0, 0, 0.438); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); 
+    color: #fff; 
+}
+
+.edit-glass-navbar,.add-glass-navbar {
+    background: rgba(255, 255, 255, 0.195); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37); 
+    color: #fff; 
+}
+
+.glass-form {
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    border-radius: 20px; 
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+}
+
+.form-label {
+    color: #fff; 
+}
+
+.glass-form input::placeholder {
+    color: rgba(255, 255, 255, 0.7); 
+}
+
+.glass-form .btn {
+    background-color: rgba(255, 255, 255, 0.2); 
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-form .btn:hover {
+    background-color: rgba(255, 255, 255, 0.4); 
+}
+
+.t-card:hover .t-img::before {
+    height: 100%;
+    visibility: visible;
+}
+
+.t-card .t-content,
+.t-card .t-img:before {
+    transition: all ease 0.4s;
+}
+
+.t-card .t-img:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #000;
+    opacity: 0.8;
+    visibility: hidden;
+}
+
+.t-card .t-content {
+    transform: translateY(-50%);
+    transition: all ease 0.4s;
+}
+
+.t-card:hover .t-content {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition-delay: 0.2s !important;
+    margin-top: 1px !important;
+}

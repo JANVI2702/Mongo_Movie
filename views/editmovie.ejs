@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Movie</title>
+
+  <link rel="stylesheet" href="../bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+  <!-- navbar -->
+<nav
+      class="navbar navbar-expand-lg navbar-light fixed-top edit-glass-navbar p-3 "
+    >
+      <div class="container">
+        <a class="navbar-brand fs-1 text-white fw-medium" href="#"
+          >Movie<span class="text-primary">.NET</span></a
+        >
+        <button
+          class="navbar-toggler text-white"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav mb-2 mb-lg-0 d-flex align-items-center">
+            <li class="nav-item">
+              <a
+                class="nav-link active fs-4 text-white"
+                aria-current="page"
+                href="#"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-4 text-white" href="#">Watchlist</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-4 text-white" href="#">Settings</a>
+            </li>
+           
+          </ul>
+      
+        </div>
+      </div>
+    </nav>
+
+  <!-- movie data section -->
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center vh-100">
+      <div class="w-50">
+        <h1 class="fs-1 text-white fw-medium text-center">Edit Movie Details</h1>
+        <form class="mt-3 w-100 glass-form p-4 rounded-4" action="/updateData" method="post">
+          <div class="mb-3">
+            <label for="title" class="form-label fs-4">Title</label>
+            <input type="hidden" name="id" value="<%= movie.id %>">
+            <input type="text" class="form-control fs-4" id="title" name="title" value="<%= movie.title %>">
+          </div>
+          <div class="mb-3">
+            <label for="date" class="form-label fs-4">Realising Date</label>
+            <input type="date" class="form-control fs-4" id="date" name="date" value="<%= new Date(movie.date).toISOString().split('T')[0] %>">
+          </div>
+          <div class="mb-3">
+            <label for="des" class="form-label fs-4">Description</label>
+            <textarea class="form-control fs-4" id="des" name="des"><%= movie.des %></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="img" class="form-label fs-4">Movie Image</label>
+            <input type="url" class="form-control fs-4" id="img" name="img"  value="<%= movie.img %>">
+          </div>
+          <div class="mb-3">
+            <label for="rating" class="form-label fs-4">Select Rating</label>
+            <select name="rating" id="" class="form-select fs-4">
+              <option value="" <%=!movie.rating ? 'selected' : '' %>>select stars</option>
+              <option value="⭐" <%=movie.rating==='⭐' ? 'selected' : '' %>>⭐</option>
+              <option value="⭐⭐" <%=movie.rating==='⭐⭐' ? 'selected' : '' %>>⭐⭐</option>
+              <option value="⭐⭐⭐" <%=movie.rating==='⭐⭐⭐' ? 'selected' : '' %>>⭐⭐⭐</option>
+              <option value="⭐⭐⭐⭐" <%=movie.rating==='⭐⭐⭐⭐' ? 'selected' : '' %>>⭐⭐⭐⭐</option>
+              <option value="⭐⭐⭐⭐⭐" <%=movie.rating==='⭐⭐⭐⭐⭐' ? 'selected' : '' %>>⭐⭐⭐⭐⭐</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary fs-4">Update Movie Data</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
